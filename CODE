@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main()
+{
+    int emp_id;
+    char emp_name[50];
+    float basic, hra, da, pf;
+    float gross_salary, net_salary;
+
+    printf("EMPLOYEE SALARY SLIP GENERATOR\n");
+    printf("--------------------------------\n");
+
+    printf("Enter Employee ID: ");
+    scanf("%d", &emp_id);
+
+    printf("Enter Employee Name: ");
+    scanf("%s", emp_name);
+
+    printf("Enter Basic Salary: ");
+    scanf("%f", &basic);
+
+    // Salary Calculations
+    hra = basic * 0.20;
+    da = basic * 0.10;
+    pf = basic * 0.12;
+
+    gross_salary = basic + hra + da;
+    net_salary = gross_salary - pf;
+
+    // Output
+    printf("\n--------- SALARY SLIP ---------\n");
+    printf("Employee ID   : %d\n", emp_id);
+    printf("Employee Name : %s\n", emp_name);
+    printf("Basic Salary  : %.2f\n", basic);
+    printf("HRA           : %.2f\n", hra);
+    printf("DA            : %.2f\n", da);
+    printf("PF Deduction  : %.2f\n", pf);
+    printf("Gross Salary  : %.2f\n", gross_salary);
+    printf("Net Salary    : %.2f\n", net_salary);
+    printf("--------------------------------\n");
+
+    return 0;
+}
